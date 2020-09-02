@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <a href="#"><img class="shadow" id="logo" src="Images\logo_Sample1.png" alt=""></a>
+    </div>
+    <div class="form_ui shadow">
+        
+        <div class="form-group ">
+          <h3>Login to Sole-Seller</h3>
+          <label for="text" class="mt-2" >Email</label>
+          <input type="email" class="form-control" id="txtEmail" > 
+          <label for="text" class="mt-2">Password</label>
+          <input type="password" class="form-control" id="txtPassword" >
+          <button id="btnLogin" class="btn btn-outline-success block mt-3" > Login </button>
+          <button id="btnSignOut"  class="btn btn-action hide "></button>
+        </div>
+    </div>
+
+    <div class="shadow btn-ui mt-3" id="btn-new">
+        <button type="submit"  class="btn btn-link block" onclick="login()"> Create Account</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+<!-- onclick="login()"onclick="login()" -->
