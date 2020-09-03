@@ -1,0 +1,49 @@
+body{
+    background: #fff;
+    margin: 0px;
+    padding: 0px;
+}
+.form_ui{
+    padding: 15px;
+    margin: auto;
+    margin-top: 220px;
+    width: 30%;
+    
+}
+
+#logo{
+    position: absolute;
+    height: 100px;
+    left: 45%;
+    top: 80px;
+
+}
+
+    
+#btn-new{
+    padding: 5px;
+    margin: auto;
+    margin-top: 2px;
+    width: 30%;
+    text-align: center;
+    justify-content: center;
+}
+
+.form_ui input{
+    display: block;
+    /* border-radius: 10px; */
+}
+
+.btn-ui button{
+    /* padding: 2px; */
+    width: 100%;
+}
+
+.form_ui button{
+    width: 100%;
+    border-radius: 10px;
+}
+
+h3{
+    font-family: 'Lobster', cursive;
+}

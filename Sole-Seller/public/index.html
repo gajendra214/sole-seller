@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sole-Seller</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <script defer src="/__/firebase/7.19.1/firebase-app.js"></script>
+  <script defer src="/__/firebase/7.19.1/firebase-auth.js"></script>
+  <script defer src="/__/firebase/7.19.1/firebase-firestore.js"></script>
+  <script defer src="/__/firebase/init.js"></script>
+  <script type="text/javascript">
+  const signUp=()=>{
+    var email = document.getElementById('email').value;
+    var password = document.getElementById('password').value;
+    firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+    window.alert(error.message);
+
+    var errorCode = error.code;
+    var errorMessage = error.message;
+});}
+  const signIn=()=>{
+    firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+      var email = document.getElementById('email').value;
+      var password = document.getElementById('password').value;
+      // window.alert(email + password);
+      window.alert(error.message);
+
+      var errorCode = error.code;
+      var errorMessage = error.message;
+});}
+
+const signOut=()=>{
+  
+  firebase.auth().signOut().then(()=>{
+    document.getElementById('status').style.display = 'none';
+    window.alert('logged out');
+    });
+  
+}
+
+
+window.onload=()=>{stats();};
+
+
+const stats=()=>{firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    window.alert('logged in');
+  } else {
+    window.alert('logged out'); 
+  }
+});}
+
+
+  </script>
+<div>
+  <a href="#"><img class="shadow" id="logo" src="Images\logo_Sample1.png" alt=""></a>
+</div>
+<div class="form_ui shadow">
+  
+  <div class="form-group ">
+    <h3>Login to Sole-Seller</h3>
+    <label for="text" class="mt-2" >Email</label>
+    <input type="email" class="form-control" id="email" > 
+    <label for="text" class="mt-2">Password</label>
+    <input type="password" class="form-control" id="password" >
+    <button id="signIn" onclick="signIn()" class="btn btn-outline-success block mt-3" >Sign In</button>
+    <button id="signUp" onclick="signUp()" class="btn btn-outline-primary block mt-2 ">Sign Up</button>
+  </div>
+</div>
+
+
+<div class="shadow btn-ui mt-3" id="btn-new">
+  <button type="submit"  class="btn btn-primary block" onclick="signOut()">Sign Out</button>
+</div>
+
+<div id="status">
+  <h1>Welcome!!</h1>
+ </div>
+ 
+</body>
+</html>
